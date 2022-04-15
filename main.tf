@@ -19,7 +19,7 @@ resource "aws_route_table" "mtc_public_rt" {
   }
 }
 
-resource "aws_route" "mtc_sg" {
+resource "aws_route" "mtc_rt" {
   route_table_id         = aws_route_table.mtc_public_rt.id
   destination_cidr_block = "0.0.0.0/0"
   gateway_id             = aws_internet_gateway.mtc_internet_gateway.id

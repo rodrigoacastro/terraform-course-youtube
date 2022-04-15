@@ -1,5 +1,5 @@
 
-resource "aws_security_group" "dev_sg" {
+resource "aws_security_group" "mtc_sg" {
   name        = "dev_sg"
   description = "dev security group"
   vpc_id      = aws_vpc.mtc_vpc.id
