@@ -9,7 +9,15 @@ resource "aws_security_group" "mtc_sg" {
     from_port   = 443
     to_port     = 443
     protocol    = "tcp"
-    cidr_blocks = [aws_vpc.mtc_vpc.cidr_block] # you can add my own ip to allow access only to it: example 11.12.13.14/32
+    cidr_blocks = [aws_vpc.mtc_vpc.cidr_block]
+  }
+
+  ingress {
+    description = "SSH"
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["MY_IP/32"]
   }
 
   egress {
